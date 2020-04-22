@@ -1,0 +1,113 @@
+% Šablona pro generování dokumentů ve stylu Harmonia (harm.cz)
+% Created by Jiří Szkandera
+
+\input opmac
+\input luafonts        % makro soubor z CSplainu
+\font\notolight={notosans-extralight} at15pt
+\regfont\notolight
+\font\notoserif={notoserif} at12pt
+\regfont\notoserif
+
+\fontfam[TG Adventor]
+\chyph % dělení českých slov
+
+\parindent=0pt
+
+\nopagenumbers
+
+% barvičky
+\def\Blue{\setcmykcolor{.86 .38 0 .05}}
+\def\HeaderBlue{\setcmykcolor{.23 .1 0 .01}}
+\def\Red{\setcmykcolor{0 1 .64 .04}}
+\def\Green{\setcmykcolor{.76 0 .59 .35}}
+\def\Grey{\setcmykcolor{.14 .06 0 .51}}
+
+% styly fontů
+\def\section#1{\nonum\sec #1}
+\def\subsection#1{\nonum\printsecc{#1}}
+\eoldef\lead#1{{\notolight #1\par}}
+
+% makra
+% layout
+\def\fourcols#1#2#3#4{%
+	\halign{&\hbox to.25\hsize{\hss\vtop{\emergencystretch=1cm\hsize=0.22\hsize ##}\hss}\cr
+		#1 & #2 & #3 & #4\cr
+	}
+}
+
+\def\threecols#1#2#3{%
+	\halign{&\hbox to.33\hsize{\hss\vtop{\emergencystretch=1cm\hsize=0.30\hsize ##}\hss}\cr
+		#1 & #2 & #3\cr
+	}
+}
+
+\def\twocols#1#2{%
+	\halign{&\hbox to.5\hsize{\hss\vtop{\emergencystretch=1cm\hsize=0.47\hsize ##}\hss}\cr
+		#1 & #2\cr
+	}
+}
+
+% barevne boxy
+
+\def\colorbox#1#2{%
+\def#1##1{
+	\parskip0pt
+	{\setbox0=\vbox{\hsize=.92\hsize\Black ##1}
+	\medskip
+	\localcolor#2
+	\hrule\nobreak
+	\vrule width .8mm depth0.5em \hskip 1em \copy0\hfill\localcolor#2\vrule height\dimexpr \ht0 + 0.5em\relax
+	\hrule
+	\bigskip}}
+}
+
+\colorbox{\bluebox}{\Blue}
+\colorbox{\redbox}{\Red}
+\colorbox{\greenbox}{\Green}
+
+% Vkladani not
+\def\onestaff#1{%
+	\generalmeter{}
+	\generalsignature{0}
+	\instrumentnumber{1}
+	\setstaffs1{1}
+	\startextract
+		#1
+	\zendextract
+}
+
+\def\twostaff#1{%
+	\generalmeter{}
+	\generalsignature{0}
+	\instrumentnumber{1}
+	\setstaffs1{2}
+	\setclef1\bass
+	\startextract
+		#1
+	\zendextract
+}
+
+\def\notefnk#1{\cchar{-6}{\hbox to6pt{}\notoserif#1}}
+
+% tabulka
+% modifikovane OPMac Tricks
+\def\tableto#1#2#3{\bigskip\vbox\bgroup \catcode`\|=12 \tableAto{#1}{#2}{#3}\bigskip}
+\def\tableAto#1#2#3{\offinterlineskip \def\tmpa{}%
+   \tabdata={\tabskip=0pt plus1fil minus1fil}\scantabdata#2\relax
+   \halign to#1\expandafter{\the\tabdata\tabskip=0pt\tabstrutA\cr#3\crcr}\egroup}
+
+\setbox\strutbox=\hbox{\vrule height.6cm depth.3cm width0pt}
+\def\crx{\crcr \colortabline}
+\def\colortabline{\noalign{\localcolor\HeaderBlue
+   \hrule height\ht\strutbox depth\dp\strutbox \kern-\ht\strutbox \kern-\dp\strutbox}}
+
+\def\crlig{\Grey\crli\Black}
+
+\def\tabitemr{\hskip \dimexpr.5\hsize - 1.2cm\relax}
+\def\tabiteml{\quad}
+
+% misc
+\def\sup#1{\raise.75ex\hbox{\typoscale[600/]#1}}
+\def\sub#1{\lower.25ex\hbox{\typoscale[600/]#1}}
+\def\supsub#1#2{\setbox0=\hbox{#1}\sup{#1}\kern-.5\wd0\sub{#2}}
+\def\footer#1{{\localcolor\typoscale[800/800]\Grey --- #1}\par}

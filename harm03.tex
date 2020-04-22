@@ -1,0 +1,260 @@
+\input harmstyle
+\input musixtex
+\nobarnumbers
+
+\tit Melodické vedení hlasů, sekvence a závěry
+\lead Základní pravidla, jak se pohybovat s hlasy v tónině
+
+\section Sazby
+Existují tři typy sazeb. V tomto případě platí, že obrázek vydá za tisíc slov.
+\threecols{
+	\subsection{Úzká}
+	\twostaff{
+		\Notes\zw{J}\relax\nextstaff
+		\zw{ceg}\en
+	}
+	Vrchní hlasy jsou naskádány na sobě.
+}{
+	\subsection{Široká}
+	\twostaff{
+		\Notes\zw{J}\relax\nextstaff
+		\zw{cgl}\en
+	}
+	Jednotlivé hlasy mají mezi sebou prostor. Jsou poskádané ob akordické tóny.
+}{
+	\subsection{Smíšená}
+	\twostaff{
+		\Notes\zw{J}\relax\nextstaff
+		\zw{egl}\en
+	}
+	Hybrid mezi širokou a úzkou. Vyskytuje se nejméně často.
+}
+
+\section Typy pohybů
+Jak se pohybují hlasy mezi jednotlivými funkcemi?
+\fourcols{
+	\subsection{Stranný}
+	\onestaff{
+		\Notes\zh{e}\ha{g}\zh{e}\ha{i}\en
+	}
+	Jeden hlas zůstává, druhý se hýbe.
+}{
+	\subsection{Rovný}
+	\onestaff{
+		\Notes\zh{f}\ha{h}\zh{g}\ha{k}\en
+	}
+	Oba hlasy se hýbou stejným směrem.
+}{
+	\subsection{Paralelní}
+	\onestaff{
+		\Notes\zh{e}\ha{g}\zh{f}\ha{h}\en
+	}
+	Hlasy se pohybují stejným směrem o stejně velký interval.
+}{
+	\subsection{Antiparalelní}
+	\onestaff{
+		\Notes\zh{f}\ha{h}\zh{e}\ha{j}\en
+	}
+	Hlasy se pohybují proti sobě.
+}
+
+\section Rozsah hlasů
+Kde je možné psát jednotlivé hlasy v notové osnově?
+\tableto{\hsize}{ll}{\crx
+	Hlas & Rozsah\crlig
+	Soprán (nejvyšší) & c\sub{1} -- a\sub{2}\crlig
+	Alt & g -- c\sub{2}\crlig
+	Tenor & c -- g\sub{1}\crlig
+	Bas (nejnižší) & E -- c\sub{1} \cr
+}
+
+\bluebox{Jde o omezení vycházející z praxe, zpěvák s hlasem položeným v base vám nezazpívá f\sub{2}.}
+\footer{Možná by bylo dobré se naučit rozsahy nazpaměť, avšak jsem na konci třeťáku a nikdy jsem to nepotřeboval.}
+
+\section Obrat X poloha
+Obrat je dán tónem v base. Poloha se určuje podle intervalu mezi basem a sopránem.
+\twocols{%
+	\bluebox{%
+		\twostaff{
+			\Notes\ha{J}\relax\nextstaff
+			\zh{eg}\ha{j}\en
+		}
+		\footer{Tohle je kvintakord v oktávové poloze.}
+	}
+}{%
+	\bluebox{%
+		\twostaff{
+			\Notes\ha{L}\relax\nextstaff
+			\zh{ce}\ha{g}\en
+		}
+		\footer{Tohle je sextakord.}
+	}
+}
+
+\section Zákazy
+\begitems \style o
+* Paralelní a antiparalelní kvinty a oktávy.
+* Postup hlasu ve zvětšené sekundě.
+\enditems
+
+\section Klamný spoj
+Spoj mezi D (5. stupněm) a VI (6. stupněm).
+Prakticky jde o následek toho, že citlivý tón musí stoupat.
+Všechny ostatní hlasy jdou protipohybem k basu.
+\twocols{%
+	\subsection{V dur}
+	\twostaff{
+		\NOtes\notefnk{D}\hl{N}\notefnk{VI}\hl{a}\relax\nextstaff
+		\zh{dg}\ha{i}\zh{ce}\ha{j}\en
+	}
+}{%
+	\subsection{V moll}
+	\twostaff{
+		\NOtes\notefnk{D}\hl{N}\notefnk{VI}\hl{_a}\relax\nextstaff
+		\zh{dg}\ha{i}\zh{c_e}\ha{j}\en
+	}
+}
+
+\section Předzdvojení
+Pokud jsem v moll harmonické a mám spoj ze VI na D, musím použít tzv. předzdvojení.
+Toto vychází z pravidla, že nesmíme jít s hlasem o zv. sekundu.
+\twocols{%
+	\redbox{
+		\twostaff{
+			\NOtes\notefnk{VI}\hl{_a}\notefnk{D}\hl{N}\relax\nextstaff
+			\Red\zh{_hj}\ha{_l}\zh{=ik}\ha{n}\en
+		}
+		\footer{Postup ve zvětšené sekundě (tenor)}
+	}
+}{%
+	\greenbox{
+		\twostaff{
+			\NOtes\notefnk{VI}\hl{_a}\notefnk{D}\hl{N}\relax\nextstaff
+			\roffset{-1}{\zh{j}\fl{l}}\zh{j}\hl{l}\zh{=ik}\ha{n}\en
+		}
+		\footer{S předzdvojením}
+	}
+}
+
+\section Sekvence
+Sekvence je určitý motiv, který je stupňovitě přenášen o sekundu. Většinou je jeden až dva takty dlouhý.
+\subsection{Jak vytvořit sekvenci?}
+Tvoření je docela snadné.
+Existuje jediné pravidlo, které musím dodržet (výjma pravidel, které už jsou dané, třeba jako zákaz paralelních kvint).
+\redbox{Počáteční a koncový akord sekvence musí být v jiné poloze.}
+Pojďme si to ukázat na příkladu:
+
+\generalmeter\meterC
+\generalsignature{2}
+\setclef1\bass
+\setstaffs1{2}
+\startextract
+	\NOtes\notefnk{T}\Red\ql{K}\Black\notefnk{T\sup{6}}\ql{M}\notefnk{S}\Red\ql{N}\Black|\Red\zq{fh}\qa{k}\Black\zq{dh}\qa{k}\Red\zq{dg}\qa{i}\Black\en
+\endextract
+\medskip
+Jakmile mám vytvořený model, stačí ho už pak kopírovat/transponovat napříč akordy.
+
+\generalmeter{\meterfrac34}
+\startextract
+	\NOtes\notefnk{T}\ql{K}\notefnk{T\sup{6}}\ql{M}\notefnk{S}\ql{N}|\zq{fh}\qa{k}\zq{dh}\qa{k}\zq{dg}\qa{i}\en\bar
+	\NOtes\notefnk{II}\ql{L}\notefnk{II\sup{6}}\ql{N}\notefnk{D}\ql{a}|\zq{gi}\qa{l}\zq{ei}\qa{l}\zq{eh}\qa{j}\en\bar
+	\NOtes\notefnk{III}\ql{M}\notefnk{III\sup{6}}\ql{a}\notefnk{VI}\ql{b}|\zq{hj}\qa{m}\zq{fj}\qa{m}\zq{fi}\qa{k}\en
+\endextract
+
+\section Závěry
+Závěry se určujou podle posledních dvou funkcí v hudební větě. V osmitaktových cvičeních (které dává Bělík) jsou většinou závěry dva (na konci předvětí a závětí).
+
+\startpiece
+\generalmeter{\allabreve}%
+\generalsignature{1}
+	\NOtes\notefnk{T}\ha{G}\notefnk{T\sup{6}}\ha{I}|\zh{gi}\ha{k}\zh{dg}\ha{k}\en\bar
+	\NOtes\notefnk{D\supsub{65}{43}}\zw{K}|\zh{dg}\ha{i}\zh{df}\ha{h}\en\bar
+	\NOtes\notefnk{VI}\ha{L}\notefnk{II\supsub{6}{4}}\ha{J}|\zh{b}\roff{\zh{g}}\ha{g}\zh{ce}\ha{h}\en\bar
+	\NOtes\notefnk{D\supsub{65}{43}}\zw{K}|\Red\zh{bd}\ha{g}\zh{ad}\ha{f}\Black\en\bar
+	\NOtes\notefnk{T}\ha{N}\notefnk{T\supsub{6}{4}}\ha{K}|\zh{bd}\ha{g}\zh{bd}\ha{g}\en\bar
+	\NOtes\notefnk{II\sup{6}}\ha{J}\notefnk{T\sup{6}}\ha{I}|\zh{ce}\ha{h}\zh{dg}\ha{k}\en\bar
+	\NOtes\notefnk{II}\ha{H}\notefnk{D}\ha{K}|\zh{eh}\ha{j}\zh{df}\ha{h}\en\bar
+	\NOtes\notefnk{T\supsub{65}{43}}\zw{G}|\Red\zh{eh}\ha{j}\zh{dg}\ha{i}\Black\en
+\Endpiece
+
+\bluebox{Za závěr se považujou dvě poslední funkce v části věty.}
+A teď ta těžší část. Závěry určujeme podle několika kritérii.
+\begitems \style o
+* Končí-li závěr tónikou, je celý, jinak je poloviční.
+\enditems
+
+\subsection{Podle funkcí}
+Závěry se dělí podle toho, jaké funkce obsahují.
+\tableto{\hsize}{ll}{\crx
+	Funkce & Závěr\crlig
+	T-D nebo D-T & Autentický\crlig
+	D-VI & Klamný\crlig
+	T-S nebo S-T & Plagální\cr
+}
+
+\subsection{Melodicky dokonalý}
+Soprán (vrchní hlas) musí končit základním tónem tóniky a musí k tónice postupovat stupňovitě (sekundou).
+
+\generalmeter{}
+\generalsignature{0}
+\twocols{
+	\greenbox{
+		\twostaff{
+			\NOtes\notefnk{D}\ha{N}\relax\nextstaff\zh{dg}\ha{i}\en\bar
+			\NOtes\notefnk{T}\ha{J}\relax\nextstaff\zh{eg}\ha{j}\en
+		}
+		\footer{Závěr autentický celý; melodicky, harmonicky i rytmicky dokonalý.}
+	}
+}{
+	\redbox{
+		\twostaff{
+			\NOtes\notefnk{D}\ha{N}\relax\nextstaff\zh{bd}\ha{g}\en\bar
+			\NOtes\notefnk{T}\ha{J}\relax\nextstaff\zh{eg}\ha{j}\en
+		}
+		\footer{Závěr autentický celý; {\bf melodicky zeslabený}, harmonicky i rytmicky dokonalý.}
+	}
+}
+
+\subsection{Harmonicky dokonalý}
+Poslední akord je v oktávové poloze a poslední dva akordy nejsou v obratu (mají základní tón v base).
+\twocols{
+	\greenbox{
+		\twostaff{
+			\NOtes\notefnk{D}\ha{N}\relax\nextstaff\zh{dg}\ha{i}\en\bar
+			\NOtes\notefnk{T}\ha{J}\relax\nextstaff\zh{eg}\ha{j}\en
+		}
+		\footer{Závěr autentický celý; melodicky, harmonicky i rytmicky dokonalý.}
+	}
+}{
+	\redbox{
+		\twostaff{
+			\NOtes\notefnk{D\sup{87}}\zw{N}\relax\nextstaff\zh{bd}\ha{g}\zh{bd}\ha{f}\en\bar
+			\NOtes\notefnk{T}\ha{J}\relax\nextstaff\zh{eg}\ha{j}\en
+		}
+		\footer{Závěr autentický celý; melodicky zeslabený, {\bf harmonicky zeslabený}, rytmicky dokonalý }
+	}
+}
+
+\subsection{Rytmicky dokonalý}
+Poslední akord je na těžké době.
+\twocols{
+	\greenbox{
+		\twostaff{
+			\NOtes\notefnk{D}\ha{N}\relax\nextstaff\zh{dg}\ha{i}\en\bar
+			\NOtes\notefnk{T}\ha{J}\relax\nextstaff\zh{eg}\ha{j}\en
+		}
+		\footer{Závěr autentický celý; melodicky, harmonicky i rytmicky dokonalý.}
+	}
+}{
+	\redbox{
+		\generalmeter{\meterfrac34}
+		\twostaff{
+			\NOtes\notefnk{D}\ql{N}\notefnk{VI}\ha{a}\relax\nextstaff\zq{bd}\qa{g}\zh{cg}\ha{j}\en
+		}
+		\footer{Závěr klamný; melodicky dokonalý, harmonicky nedokonalý, {\bf rytmicky zeslabený}}
+	}
+}
+
+Pokud je nějaká z podmínek nesplněna, je závěr v daném \uv{oboru} zeslabený.
+
+\bye
