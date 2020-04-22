@@ -2,7 +2,9 @@
 Šablona zavádějící styl harm.cz
 
 ## Popis a použití
-Toto šablona (harmstyle.tex) slouží ke generování PDF dokumentů ve stylu mojí stránky Harmonia. Jako ukázku užitečnosti jsem zkonvertoval stránku [Melodické vedení](http://harm.cz/maturita/klasika/melodicke_vedeni), která obsahuje všechny konstrukce (popsané níže).
+Toto šablona (harmstyle.tex) slouží ke generování PDF dokumentů ve stylu mojí stránky Harmonia.
+Jako ukázku užitečnosti jsem zkonvertoval stránku [Melodické vedení](http://harm.cz/maturita/klasika/melodicke_vedeni), která obsahuje všechny konstrukce (popsané níže).
+Šablona staví na [OPmac](http://petr.olsak.net/opmac.html).
 
 ## Konstrukce/makra
 Jako hlavní fontovou rodinu šablona používá `TG Adventor`. Poté ještě importuje fonty `Noto Sans ExtraLight` a `Noto Serif`, které se používají pro `\lead` a harmonické funkce.
@@ -22,7 +24,7 @@ Makra `\twocols`, `\threecols` a `\fourcols` berou dva, tři či čtyři paramet
 `\tableto{size}{atr}{value}` vytvoří tabulku daného rozměru.
 `\crx` ukončí řádek tabulky a obarví ho modře.
 `\crlig` ukončí řádek tabulky a vloží mezi řádky šedou čáru.
-Jako inspiraci jsem použil [OPMac Tricks](http://petr.olsak.net/opmac-tricks.html#crx).
+Jako inspiraci jsem použil [OPmac Tricks](http://petr.olsak.net/opmac-tricks.html#crx).
 
 ### Miscellaneous
 `\sup` vloží horní index v textovém módu.
